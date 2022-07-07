@@ -1,4 +1,4 @@
-name: CI Pipelines
+name: CI Pipelines 1
 
 on:
   issue_comment:
@@ -14,7 +14,7 @@ env:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    name: CI Pipelines
+    name: CI Pipelines 2
     steps:
       - uses: actions/checkout@v2
       - name: Display Event
