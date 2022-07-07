@@ -15,5 +15,5 @@ jobs:
       - name: Display Event
         run: echo "${{ toJSON(github.event) }}"
       - name: Match!
-        if: ${{ contains(github.event.issue.labels.*.name, 'frontend') }}
+        if: ${{ contains(github.event.pull_request.labels.*.name, 'frontend') }}
         run: echo "matched!!!"
