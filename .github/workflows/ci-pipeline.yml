@@ -13,5 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Display Event
-        run: echo "${{ github.event.action }}"
-        run: echo "${{ toJSON(github.event.pull_request) }}"
+        run: echo "${{ github.event.action }}" "${{ toJSON(github.event.pull_request) }}"
