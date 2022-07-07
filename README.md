@@ -1,3 +1,3 @@
 # github-action
 
-Playground for learning Github Actions
+Playground for learning Github Actions.
