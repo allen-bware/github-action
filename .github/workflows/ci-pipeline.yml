@@ -9,5 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     name: CI Pipelines
     steps:
+      - uses: actions/checkout@v2
       - name: Display Event
         run: echo "${{ toJson(github.event.label) }}"
