@@ -1,0 +1,13 @@
+name: CI Pipelines
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    name: CI Pipelines
+    steps:
+      - name: Display Event
+        run: echo ${{ toJson(github.event) }}
