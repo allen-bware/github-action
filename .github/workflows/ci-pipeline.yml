@@ -13,12 +13,12 @@ env:
 
 jobs:
   pipeline:
-    if: ${{ env.HAS_FRONTEND_LABEL }}
     runs-on: ubuntu-latest
     name: CI Pipelines 2
     steps:
       - uses: actions/checkout@v2
       - name: Display Event
+        if: ${{ env.HAS_FRONTEND_LABEL }}
         run: echo "${{ toJSON(github.event) }}"
       - name: ECO HAS_FRONTEND_LABEL
         run: echo "${{ env.HAS_FRONTEND_LABEL }}"
