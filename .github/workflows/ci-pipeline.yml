@@ -1,12 +1,12 @@
 name: CI Pipelines 1
 
 on:
-  issue_comment:
-    types: [created]
   pull_request_review:
     types: [submitted]
   pull_request:
     types: [ready_for_review]
+  pull_request_review_comment:
+    types: [created]
 
 env:
   HAS_FRONTEND_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'frontend') || contains(github.event.issue.labels.*.name, 'frontend') }}
