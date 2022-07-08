@@ -15,9 +15,6 @@ env:
 
 jobs:
   pipeline:
-    if: |
-      ${{ contains(github.event.pull_request.labels.*.name, 'frontend') || contains(github.event.issue.labels.*.name, 'frontend') }} &&
-      (${{ github.event.review.state == 'approved' }} || ${{ github.event.comment.body == 'run-ci' }})
     runs-on: ubuntu-latest
     name: CI Pipelines 2
     steps:
