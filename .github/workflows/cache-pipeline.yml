@@ -2,7 +2,8 @@ name: Cache Pipeline
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches:
+      - 'main'
 
 jobs:
   cache:
