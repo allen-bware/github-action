@@ -12,6 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+
       - name: Cache
         uses: actions/cache@v3
         id: frontend_node_modules_cache
