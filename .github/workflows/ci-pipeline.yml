@@ -10,7 +10,7 @@ on:
 
 env:
   HAS_FRONTEND_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'frontend') || contains(github.event.issue.labels.*.name, 'frontend') }}
-  HAS_FAMILY_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'Family app') }}
+  HAS_FAMILY_LABEL: ${{ !contains(github.event.pull_request.labels.*.name, 'Family app') }}
   TRIGGER_BY_APPROVAL: ${{ github.event.review.state == 'approved' }}
   TRIGGER_BY_COMMENT: ${{ github.event.comment.body == 'run-ci' }}
 
