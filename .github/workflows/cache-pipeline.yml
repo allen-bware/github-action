@@ -1,0 +1,22 @@
+name: Cache Pipeline
+
+on:
+  push:
+    branches: [ $default-branch ]
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    name: Cache npm
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache
+        uses: actions/cache@v3
+        id: frontend_node_modules_cache
+        env:
+          cache-name: fe-cache-node_modules
+        with:
+          path: 'node_modules'
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+      
