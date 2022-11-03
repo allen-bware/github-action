@@ -25,4 +25,7 @@ jobs:
         with:
           path: 'node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
-      
+
+      - if: ${{ steps.frontend_node_modules_cache.outputs.cache-hit != 'true' }}
+        name: Install Front End Dependencies
+        run: npm ci
